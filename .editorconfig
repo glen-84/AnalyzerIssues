@@ -1,0 +1,25 @@
+# https://editorconfig.org/
+
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+indent_size = 4
+indent_style = space
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[*.cs]
+# Works.
+dotnet_diagnostic.IDE0003.severity = error
+
+# Does not work (see Ide0036.cs).
+dotnet_diagnostic.IDE0036.severity = error
+csharp_preferred_modifier_order = public,private,protected,internal,file,static,extern,new,virtual,abstract,sealed,override,readonly,unsafe,required,volatile,async
+# This makes it work (note the `:error` at the end).
+#csharp_preferred_modifier_order = public,private,protected,internal,file,static,extern,new,virtual,abstract,sealed,override,readonly,unsafe,required,volatile,async:error
+
+# Does not work (see Ide0040.cs).
+dotnet_diagnostic.IDE0040.severity = error
+dotnet_style_require_accessibility_modifiers = for_non_interface_members
